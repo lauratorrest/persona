@@ -1,0 +1,22 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: vehiculos
+  profiles:
+    active: local
+
+---
+spring:
+  profile: local
+  datasource:
+    url: jdbc:postgresql://localhost:5432/inventario
+    username: postgres
+    password: postgres
+    test-on-borrow: true
+    validation-query: SELECT 1 FROM dual
+  jpa:
+    show-sql: true
+    hibernate:
+      format-sql: true
+      ddl-auto: none
